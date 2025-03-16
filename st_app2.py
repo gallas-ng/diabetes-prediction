@@ -74,12 +74,12 @@ if menu == "🏥 Prediction":
             input_data = np.array([[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, pedigree, age]])
             prediction = model.predict(input_data)[0]
             if prediction == 1:
-                st.success(f"🔮 Prediction: **{'Not Diabetic'}**")
-            else:
                 st.warning(f"🔮 Prediction: **{'Diabetic'}**")
+            else:
+                st.success(f"🔮 Prediction: **{'Not Diabetic'}**")
 
     elif prediction_type == "Multiple Prediction":
-        st.subheader("📂 Upload CSV File or Fill Table")
+        st.subheader("📂 Upload CSV File")
         uploaded_file = st.file_uploader("📤 Upload CSV", type=["csv"])
         
         if uploaded_file:
