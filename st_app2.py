@@ -106,10 +106,10 @@ if menu == "📊 Study Report":
 
     #---
     st.subheader("📌 Diabetic vs Non-Diabetic Distribution")
-    # Count the number of people with and without diabetes
+    #
     diabetes_counts = df['Diabetic'].value_counts()
 
-    # Create a pie chart to visualize the distribution
+    # ---
     plt.figure(figsize=(8, 6))
     plt.pie(diabetes_counts, labels=['Non-Diabetic', 'Diabetic'], autopct='%1.1f%%', colors=['lightblue', 'lightcoral'])
     st.pyplot(plt)
@@ -119,10 +119,10 @@ if menu == "📊 Study Report":
 
     #---
     st.subheader("📌 Correlation Matrix")
-    # Compute the correlation matrix
+    # 
     correlation_matrix = df.corr()
 
-    # Plot the heatmap
+    # ---
     plt.figure(figsize=(10, 8))
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
     plt.title('Correlation Matrix')
